@@ -3,86 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Buat Sayang 🤍</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- MUSIC -->
 <audio autoplay loop id="bgMusic">
   <source src="svg.mp3" type="audio/mpeg">
 </audio>
 
-<!-- PAGE 1 -->
-<section class="page hero">
+<!-- OPEN LETTER -->
+<section class="page intro" id="intro">
+
+  <div class="letter-wrapper">
+
+    <div class="envelope" onclick="openLetter()">
+
+      <div class="letter-front">
+        🤍
+      </div>
+
+      <div class="letter-text">
+        Buka
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- MAIN -->
+<section class="page hidden hero" id="mainPage">
+
+  <div class="overlay"></div>
 
   <div class="hero-content">
 
-    <img src="Image3.jpg" class="profile">
+    <img src="Image2.jpg" class="profile">
 
-    <h1>Hai Sayang 🤍</h1>
+    <h1 id="typing"></h1>
 
-    <p>
-      Hehehe tolong dibuka yaa...
-    </p>
-
-    <button onclick="nextPage(1)">
-      Buka
-    </button>
-
-  </div>
-
-</section>
-
-<!-- PAGE 2 -->
-<section class="page hidden" id="page2">
-
-  <div class="letter">
-
-    <h2>Minta Maaf Ya Sayang🤍</h2>
-
-    <p>
+    <p class="fade-text">
       Maaf ya sayang...
-      Aku sadar hari ini aku terlalu nyebelin dan bikin kamu capek.
+      Aku sadar aku terlalu tantrum hari ini.
       Padahal kamu juga lagi capek.
-      Terima kasih karena masih sabar menghadapi aku.
-      Aku belajar buat jadi lebih baik lagi buat kamu.
+      Terima kasih karena sudah baik dan sabar menghadapi aku.
+      Aku belajar buat jadi lebih baik lagi.
       Aku sayang banget sama kamu 🤍
     </p>
 
-    <button onclick="nextPage(2)">
-      Hehehehe
+    <button onclick="showGallery()">
+      Hehehehe ... 🤍
     </button>
 
   </div>
 
 </section>
 
-<!-- PAGE 3 -->
-<section class="page hidden" id="page3">
+<!-- GALLERY -->
+<section class="page hidden gallery-page" id="galleryPage">
 
-  <h2 class="gallery-title">
-    Kesayangan Akuuuu 🤍
-  </h2>
+  <h2>Kesayangan Akuuuu 🤍</h2>
 
-  <div class="gallery">
+  <div class="floating-gallery">
 
-    <img src="Image1.jpg">
-    <img src="Image2.jpg">
-    <img src="Image4.jpg">
-    <img src="Image5.jpg">
-    <img src="Image6.jpg">
+    <img src="Image1.jpg" class="photo p1">
+    <img src="Image2.jpg" class="photo p2">
+    <img src="Image3.jpg" class="photo p3">
+    <img src="Image4.jpg" class="photo p4">
+    <img src="Image5.jpg" class="photo p5">
+    <img src="Image6.jpg" class="photo p6">
 
   </div>
 
-  <button class="lastBtn" onclick="nextPage(3)">
+  <button class="endBtn" onclick="showEnding()">
     Terakhir 🤍
   </button>
 
 </section>
 
-<!-- PAGE 4 -->
-<section class="page hidden ending" id="page4">
+<!-- ENDING -->
+<section class="page hidden ending" id="endingPage">
 
   <div class="ending-content">
 

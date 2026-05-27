@@ -1,26 +1,51 @@
-function nextPage(page){
+const text = "Hai Sayang 🤍";
+let i = 0;
 
-  document.querySelectorAll(".page").forEach(section=>{
-    section.classList.add("hidden");
-  });
+function typingEffect(){
 
-  if(page === 1){
-    document.getElementById("page2").classList.remove("hidden");
-  }
+  if(i < text.length){
 
-  if(page === 2){
-    document.getElementById("page3").classList.remove("hidden");
-  }
+    document.getElementById("typing").innerHTML += text.charAt(i);
 
-  if(page === 3){
-    document.getElementById("page4").classList.remove("hidden");
+    i++;
+
+    setTimeout(typingEffect,100);
   }
 
 }
 
-/* AUTOPLAY FIX */
+function openLetter(){
+
+  document.getElementById("intro").classList.add("hidden");
+
+  document.getElementById("mainPage").classList.remove("hidden");
+
+  typingEffect();
+
+}
+
+function showGallery(){
+
+  document.getElementById("mainPage").classList.add("hidden");
+
+  document.getElementById("galleryPage").classList.remove("hidden");
+
+}
+
+function showEnding(){
+
+  document.getElementById("galleryPage").classList.add("hidden");
+
+  document.getElementById("endingPage").classList.remove("hidden");
+
+}
+
+/* MUSIC FIX */
 
 document.addEventListener("click", () => {
+
   const music = document.getElementById("bgMusic");
+
   music.play();
+
 });
