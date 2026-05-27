@@ -460,3 +460,68 @@ button:hover{
   }
 
 }
+
+/* INTRO FIX */
+
+.intro{
+  position:relative;
+}
+
+.intro-overlay{
+  position:absolute;
+  inset:0;
+  z-index:1;
+}
+
+.letter-wrapper{
+  position:relative;
+  z-index:10;
+}
+
+.envelope-btn{
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+  cursor:pointer;
+
+  user-select:none;
+
+  -webkit-tap-highlight-color:transparent;
+}
+
+.envelope{
+
+  width:220px;
+  height:150px;
+
+  background:white;
+
+  border-radius:12px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,.4);
+
+  animation:
+  pulse 2s infinite,
+  floatingLetter 4s ease-in-out infinite;
+}
+
+.letter-front{
+  font-size:3rem;
+  color:black;
+}
+
+.letter-text{
+
+  margin-top:20px;
+
+  font-size:1.2rem;
+
+  color:white;
+}

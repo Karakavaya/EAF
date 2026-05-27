@@ -2,6 +2,32 @@ const text = "Hai Sayang 🤍";
 
 let i = 0;
 
+/* ELEMENT */
+
+const intro =
+document.getElementById("intro");
+
+const mainPage =
+document.getElementById("mainPage");
+
+const galleryPage =
+document.getElementById("galleryPage");
+
+const endingPage =
+document.getElementById("endingPage");
+
+const openBtn =
+document.getElementById("openBtn");
+
+const galleryImage =
+document.getElementById("galleryImage");
+
+const progressBar =
+document.getElementById("progressBar");
+
+const music =
+document.getElementById("bgMusic");
+
 /* TYPING */
 
 function typingEffect(){
@@ -22,30 +48,29 @@ function typingEffect(){
 
 function openLetter(){
 
-  const music =
-  document.getElementById("bgMusic");
-
   music.play();
 
-  document.getElementById("intro")
-  .classList.add("hidden");
+  intro.classList.add("hidden");
 
-  document.getElementById("mainPage")
-  .classList.remove("hidden");
+  mainPage.classList.remove("hidden");
 
   typingEffect();
 
 }
 
+/* EVENT FIX */
+
+openBtn.addEventListener("click", openLetter);
+
+openBtn.addEventListener("touchstart", openLetter);
+
 /* OPEN GALLERY */
 
 function showGallery(){
 
-  document.getElementById("mainPage")
-  .classList.add("hidden");
+  mainPage.classList.add("hidden");
 
-  document.getElementById("galleryPage")
-  .classList.remove("hidden");
+  galleryPage.classList.remove("hidden");
 
   startSlideshow();
 
@@ -55,11 +80,9 @@ function showGallery(){
 
 function showEnding(){
 
-  document.getElementById("galleryPage")
-  .classList.add("hidden");
+  galleryPage.classList.add("hidden");
 
-  document.getElementById("endingPage")
-  .classList.remove("hidden");
+  endingPage.classList.remove("hidden");
 
 }
 
@@ -77,12 +100,6 @@ const images = [
 ];
 
 let currentImage = 0;
-
-const galleryImage =
-document.getElementById("galleryImage");
-
-const progressBar =
-document.getElementById("progressBar");
 
 /* NEXT IMAGE */
 
