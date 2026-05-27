@@ -286,3 +286,95 @@ button{
   }
 
 }
+
+/* SINGLE FLOATING IMAGE */
+
+.gallery-page{
+  background:black;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.gallery-title{
+  position:absolute;
+  top:50px;
+  font-size:2.2rem;
+  text-align:center;
+}
+
+.single-photo-container{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+#galleryImage{
+
+  width:320px;
+  max-width:85vw;
+
+  border:14px solid white;
+  border-bottom:60px solid white;
+
+  box-shadow:0 20px 50px rgba(0,0,0,.6);
+
+  object-fit:cover;
+
+  animation:
+  floatingPhoto 5s ease-in-out infinite,
+  cinematicZoom 12s ease-in-out infinite alternate;
+
+  transition:1s;
+}
+
+/* TAP TEXT */
+
+.tap-text{
+  position:absolute;
+  bottom:40px;
+  opacity:.7;
+  font-size:1rem;
+
+  animation:pulse 2s infinite;
+}
+
+/* FLOAT */
+
+@keyframes floatingPhoto{
+
+  0%{
+    transform:
+    translateY(0px)
+    rotate(-2deg);
+  }
+
+  50%{
+    transform:
+    translateY(-15px)
+    rotate(2deg);
+  }
+
+  100%{
+    transform:
+    translateY(0px)
+    rotate(-2deg);
+  }
+
+}
+
+/* CINEMATIC */
+
+@keyframes cinematicZoom{
+
+  from{
+    scale:1;
+  }
+
+  to{
+    scale:1.05;
+  }
+
+}
