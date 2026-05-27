@@ -1,11 +1,15 @@
 const text = "Hai Sayang 🤍";
+
 let i = 0;
+
+/* TYPING */
 
 function typingEffect(){
 
   if(i < text.length){
 
-    document.getElementById("typing").innerHTML += text.charAt(i);
+    document.getElementById("typing")
+    .innerHTML += text.charAt(i);
 
     i++;
 
@@ -18,21 +22,27 @@ function typingEffect(){
 
 function openLetter(){
 
-  document.getElementById("intro").classList.add("hidden");
+  document.getElementById("intro")
+  .classList.add("hidden");
 
-  document.getElementById("mainPage").classList.remove("hidden");
+  document.getElementById("mainPage")
+  .classList.remove("hidden");
 
   typingEffect();
 
 }
 
-/* SHOW GALLERY */
+/* OPEN GALLERY */
 
 function showGallery(){
 
-  document.getElementById("mainPage").classList.add("hidden");
+  document.getElementById("mainPage")
+  .classList.add("hidden");
 
-  document.getElementById("galleryPage").classList.remove("hidden");
+  document.getElementById("galleryPage")
+  .classList.remove("hidden");
+
+  startSlideshow();
 
 }
 
@@ -40,13 +50,15 @@ function showGallery(){
 
 function showEnding(){
 
-  document.getElementById("galleryPage").classList.add("hidden");
+  document.getElementById("galleryPage")
+  .classList.add("hidden");
 
-  document.getElementById("endingPage").classList.remove("hidden");
+  document.getElementById("endingPage")
+  .classList.remove("hidden");
 
 }
 
-/* GALLERY IMAGE SLIDER */
+/* IMAGES */
 
 const images = [
 
@@ -61,10 +73,15 @@ const images = [
 
 let currentImage = 0;
 
-const galleryImage = document.getElementById("galleryImage");
+const galleryImage =
+document.getElementById("galleryImage");
 
-document.getElementById("galleryPage")
-.addEventListener("click", () => {
+const progressBar =
+document.getElementById("progressBar");
+
+/* NEXT IMAGE */
+
+function nextImage(){
 
   currentImage++;
 
@@ -77,21 +94,82 @@ document.getElementById("galleryPage")
 
   galleryImage.style.opacity = 0;
 
+  galleryImage.style.filter =
+  "blur(10px)";
+
+  galleryImage.style.transform =
+  "scale(.92)";
+
   setTimeout(() => {
 
-    galleryImage.src = images[currentImage];
+    galleryImage.src =
+    images[currentImage];
 
     galleryImage.style.opacity = 1;
 
-  },400);
+    galleryImage.style.filter =
+    "blur(0px)";
+
+    galleryImage.style.transform =
+    "scale(1)";
+
+    updateProgress();
+
+  },700);
+
+}
+
+/* AUTO STORY */
+
+function startSlideshow(){
+
+  updateProgress();
+
+  setInterval(() => {
+
+    nextImage();
+
+  },4000);
+
+}
+
+/* PROGRESS */
+
+function updateProgress(){
+
+  const percent =
+  ((currentImage + 1)
+  / images.length) * 100;
+
+  progressBar.style.width =
+  percent + "%";
+
+}
+
+/* PARALLAX */
+
+document.addEventListener("mousemove",
+(e)=>{
+
+  const x =
+  (window.innerWidth / 2 - e.pageX)
+  / 40;
+
+  const y =
+  (window.innerHeight / 2 - e.pageY)
+  / 40;
+
+  galleryImage.style.transform =
+  `translate(${x}px, ${y}px)`;
 
 });
 
 /* MUSIC FIX */
 
-document.addEventListener("click", () => {
+document.addEventListener("click",()=>{
 
-  const music = document.getElementById("bgMusic");
+  const music =
+  document.getElementById("bgMusic");
 
   music.play();
 
