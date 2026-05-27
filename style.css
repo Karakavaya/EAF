@@ -20,8 +20,6 @@ body{
   overflow:hidden;
 }
 
-/* HIDDEN */
-
 .hidden{
   display:none;
 }
@@ -42,35 +40,68 @@ body{
   background-position:center;
 }
 
-.envelope{
-  width:220px;
-  height:150px;
-  background:white;
-  border-radius:10px;
-  position:relative;
+/* LETTER BUTTON */
+
+.envelope-btn{
+
+  background:none;
+  border:none;
+
   cursor:pointer;
 
-  animation:pulse 2s infinite;
+  position:relative;
+
+  z-index:50;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
 }
 
-.letter-front{
-  position:absolute;
-  inset:0;
+/* ENVELOPE */
+
+.envelope{
+
+  width:220px;
+  height:150px;
+
+  background:white;
+
+  border-radius:12px;
+
+  position:relative;
 
   display:flex;
   justify-content:center;
   align-items:center;
 
+  animation:
+  pulse 2s infinite,
+  floatingLetter 4s ease-in-out infinite;
+
+  box-shadow:
+  0 20px 50px rgba(0,0,0,.4);
+}
+
+/* HEART */
+
+.letter-front{
+
   font-size:3rem;
   color:black;
 }
 
+/* TEXT */
+
 .letter-text{
-  position:absolute;
-  bottom:-40px;
-  width:100%;
-  text-align:center;
+
+  margin-top:20px;
+
   font-size:1.2rem;
+
+  color:white;
+
+  opacity:.9;
 }
 
 /* HERO */
@@ -157,7 +188,7 @@ button:hover{
   transform:scale(1.05);
 }
 
-/* GALLERY PAGE */
+/* GALLERY */
 
 .gallery-page{
 
@@ -256,7 +287,7 @@ button:hover{
   cinematicZoom 12s ease-in-out infinite alternate;
 }
 
-/* TEXT */
+/* TAP TEXT */
 
 .tap-text{
 
@@ -390,6 +421,22 @@ button:hover{
   to{
     opacity:1;
     transform:translateY(0);
+  }
+
+}
+
+@keyframes floatingLetter{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+
+  100%{
+    transform:translateY(0px);
   }
 
 }

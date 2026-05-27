@@ -22,6 +22,11 @@ function typingEffect(){
 
 function openLetter(){
 
+  const music =
+  document.getElementById("bgMusic");
+
+  music.play();
+
   document.getElementById("intro")
   .classList.add("hidden");
 
@@ -161,16 +166,5 @@ document.addEventListener("mousemove",
 
   galleryImage.style.transform =
   `translate(${x}px, ${y}px)`;
-
-});
-
-/* MUSIC FIX */
-
-document.addEventListener("click",()=>{
-
-  const music =
-  document.getElementById("bgMusic");
-
-  music.play();
 
 });
