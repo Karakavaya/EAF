@@ -1,32 +1,26 @@
-function updateContent(){
+function nextPage(page){
 
-  const name = document.getElementById("nameInput").value;
-  const photo = document.getElementById("photoInput");
+  document.querySelectorAll(".page").forEach(section=>{
+    section.classList.add("hidden");
+  });
 
-  const displayName = document.getElementById("displayName");
-  const preview = document.getElementById("preview");
-
-  if(name.trim() !== ""){
-    displayName.innerHTML = `Minta maaf ya sayang, ${name} 🤍`;
+  if(page === 1){
+    document.getElementById("page2").classList.remove("hidden");
   }
 
-  if(photo.files && photo.files[0]){
+  if(page === 2){
+    document.getElementById("page3").classList.remove("hidden");
+  }
 
-    const reader = new FileReader();
-
-    reader.onload = function(e){
-      preview.src = e.target.result;
-    }
-
-    reader.readAsDataURL(photo.files[0]);
-
+  if(page === 3){
+    document.getElementById("page4").classList.remove("hidden");
   }
 
 }
 
-/* AUTOPLAY FIX MOBILE */
+/* AUTOPLAY FIX */
 
-document.addEventListener("click", function () {
-  const audio = document.getElementById("bgMusic");
-  audio.play();
+document.addEventListener("click", () => {
+  const music = document.getElementById("bgMusic");
+  music.play();
 });

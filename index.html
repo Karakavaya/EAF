@@ -3,84 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minta maaf ya sayang 🤍</title>
+  <title>Buat Sayang 🤍</title>
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- BACKSOUND -->
 <audio autoplay loop id="bgMusic">
   <source src="svg.mp3" type="audio/mpeg">
 </audio>
 
-<div class="overlay"></div>
+<!-- PAGE 1 -->
+<section class="page hero">
 
-<div class="container">
+  <div class="hero-content">
 
-  <div class="card">
+    <img src="Image3.jpg" class="profile">
 
-    <div class="photo-container">
-      <img id="preview" src="Image2" alt="Foto">
-    </div>
+    <h1>Hai Sayang 🤍</h1>
 
-    <h1 id="displayName">Tolong dibuka sayang cintaku hehe 🤍</h1>
-
-    <p class="message">
-      Sayang aku minta maaf yaaa 
-      Hari ini aku jadi todler parah banget
-      Capek dan kangen trus jadi tantrum padahal kamu juga capek dan lagi istirahat
-      Aku minta maaf ya sayang, aku belajar buat engga jadi kayak gini lagi
-      Terima kasih tadi sudah dimaafkan sayang, aku sayang kamu
-      I love you sayangkuu 🤍
+    <p>
+      Hehehe tolong dibuka yaa...
     </p>
 
-    <div class="form-section">
-
-      <input type="text" id="nameInput" placeholder="Masukkan Nama">
-
-      <input type="file" id="photoInput" accept="image/*">
-
-      <button onclick="updateContent()">
-        Tampilkan
-      </button>
-
-    </div>
+    <button onclick="nextPage(1)">
+      Buka
+    </button>
 
   </div>
 
-  <!-- GALERI -->
-  <div class="gallery-section">
+</section>
 
-    <h2>Kesayangan Akuuuu</h2>
+<!-- PAGE 2 -->
+<section class="page hidden" id="page2">
 
-    <div class="gallery">
+  <div class="letter">
 
-  <div class="gallery-item">
-    <img src="Image1">
-  </div>
+    <h2>Minta Maaf Ya Sayang🤍</h2>
 
-  <div class="gallery-item">
-    <img src="Image2">
-  </div>
-  
-  <div class="gallery-item">
-    <img src="Image4">
-  </div>
-  
-  <div class="gallery-item">
-    <img src="Image5">
-  </div>
-  
-  <div class="gallery-item">
-    <img src="Image6">
-  </div>
-    
-</div>
+    <p>
+      Maaf ya sayang...
+      Aku sadar hari ini aku terlalu nyebelin dan bikin kamu capek.
+      Padahal kamu juga lagi capek.
+      Terima kasih karena masih sabar menghadapi aku.
+      Aku belajar buat jadi lebih baik lagi buat kamu.
+      Aku sayang banget sama kamu 🤍
+    </p>
+
+    <button onclick="nextPage(2)">
+      Hehehehe
+    </button>
 
   </div>
 
-</div>
+</section>
+
+<!-- PAGE 3 -->
+<section class="page hidden" id="page3">
+
+  <h2 class="gallery-title">
+    Kesayangan Akuuuu 🤍
+  </h2>
+
+  <div class="gallery">
+
+    <img src="Image1.jpg">
+    <img src="Image2.jpg">
+    <img src="Image4.jpg">
+    <img src="Image5.jpg">
+    <img src="Image6.jpg">
+
+  </div>
+
+  <button class="lastBtn" onclick="nextPage(3)">
+    Terakhir 🤍
+  </button>
+
+</section>
+
+<!-- PAGE 4 -->
+<section class="page hidden ending" id="page4">
+
+  <div class="ending-content">
+
+    <h1>I Love You 🤍</h1>
+
+    <p>
+      Terima kasih sudah bertahan sejauh ini.
+    </p>
+
+  </div>
+
+</section>
 
 <script src="script.js"></script>
 
